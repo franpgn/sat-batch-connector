@@ -1,0 +1,29 @@
+<soap:Envelope
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Header>
+        <cfeCabecMsg
+                xmlns="http://www.fazenda.sp.gov.br/sat/wsdl/CfeConsultaLotes">
+            <cUF>35</cUF>
+            <versaoDados>0.06</versaoDados>
+        </cfeCabecMsg>
+    </soap:Header>
+    <soap:Body>
+        <CfeConsultarLotesResponse
+                xmlns="http://www.fazenda.sp.gov.br/sat/wsdl/CfeConsultaLotes">
+            <CfeConsultarLotesResult>
+                <resLote
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                </resLote>
+                <infContribuinte />
+                <Mensagem>Número de série inválido.</Mensagem>
+                <Signature
+                    xmlns="http://www.w3.org/2000/09/xmldsig#">
+                </Signature>
+                <SignedInfo></SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""></Reference><Transforms></Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue></DigestValue>vYyQ/dtFZ1I/OqYbLwqI2FGvnu74STzoPHh6S6ZiF5c=</DigestValue></Reference></SignedInfo><SignatureValue>xpU6QPzySeiU+PR4P38xGtwgYYgOwR9YqL5U0qDONQZPqR0IB7AQ8sHmKbDOQEt1OZl9z8PYSnmqHxeazwVLTat67HM9+SwYfkSAiQWsHv2uEFTAnFnjP+svCCYOzXDVkOmzWOCp9zwfKF0TIPmUcat1Pit5/nyyAsGT4+5OAqZlScD6AXa8yN/9ErsixfnZ0p4wFCbf1UMws9ukznxIe9PmVrY6R/1yw4281s076SlzgwD0nylvrXwxScRKxM/7EXxqp2YBxg027K034gkmUbHX0hRHK8ut4USZEAYY3ATZWNcGtKpzFWS1SWzT8lol2BSPw9dUYkJ+0PNVtVQbHQ==</SignatureValue><KeyInfo><X509Data></X509Data><X509Certificate></X509Certificate>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</X509Certificate></X509Data></KeyInfo></Signature></resLote>
+            </CfeConsultarLotesResult>
+        </CfeConsultarLotesResponse>
+    </soap:Body>
+</soap:Envelope>

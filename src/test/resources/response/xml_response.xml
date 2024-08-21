@@ -1,0 +1,23 @@
+<soap:Envelope
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Header>
+        <cfeCabecMsg
+                xmlns="http://www.fazenda.sp.gov.br/sat/wsdl/CfeConsultaLotes">
+            <cUF>35</cUF>
+            <versaoDados>0.06</versaoDados>
+        </cfeCabecMsg>
+    </soap:Header>
+    <soap:Body>
+        <CfeConsultarLotesResponse
+                xmlns="http://www.fazenda.sp.gov.br/sat/wsdl/CfeConsultaLotes">
+            <CfeConsultarLotesResult>
+                <![CDATA[<resLote
+				xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><infContribuinte><CNPJ>99999999999999</CNPJ><xNome>Razão Social</xNome></infContribuinte><Lote><NRec>999999999999999999999</NRec><dhEnvioLote>20150417172445</dhEnvioLote><dhProcessamento>20150417173242</dhProcessamento><TipoLote>Movimento</TipoLote><Origem>Automático (Transmitido via WebService</Origem><QtdeCupoms>1</QtdeCupoms><SituacaoLote>Processado com Sucesso</SituacaoLote><InfCfe><Cfe><Chave>CFe00000000000000000000000000000000000000000000</Chave><nCupom>66</nCupom><Situacao>Processado sem Erro</Situacao><cfeErros /></Cfe></InfCfe></Lote><Signature
+				xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>4qMTN/MCeHyhN3SONubVwW5oprRBwSuZA+3Xru344+Y=</DigestValue></Reference></SignedInfo><SignatureValue>PFFttvCQTaKthFc2OLufw8KgR+7065zCQ8dBAkLL8Y+n0tkX3TZ0Mj80yjSpjKe0uTKxA59szk2QL/xypx7+qjy/7cnprwyX4fyCpLSDVtwBPyHgOKIU++RXqk7FnNSfjXGhAxnp1lpS3Mdms0EC7ewGYpFrN3reFKkxrIvNnxg=</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIFGTCCBAGgAwIBAgIKGp6slwAAAAAAEjANBgkqhkiG9w0BAQUFADCBhTESMBAGCgmSJomT8ixkARkWAmJyMRMwEQYKCZImiZPyLGQBGRYDZ292MRIwEAYKCZImiZPyLGQBGRYCc3AxFzAVBgoJkiaJk/IsZAEZFgdmYXplbmRhMRUwEwYKCZImiZPyLGQBGRYFaW50cmExFjAUBgNVBAMTDXNwb3Bjc2YxODI4NzMwHhcNMTIwODAyMTQxNzUxWhcNMTUxMDIxMTE1NjEzWjAjMSEwHwYDVQQDExhFbXByZXNhIEZha2U6OTkxNzExNzExMTUwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKzFsf62O5Z9F3VST2ctOfMTHdxJBCDGSUJKmiYAJ9Vh8it1wLkpGN4VP2WDNd1QLMGZ1g0uAsx0nJbThIgCa0/ZaeCOHMzGcllvOr+aU7KvqDdhy3YR+NnxFWEHxFuromoOslnf75/hA8sew0WZkXBAwUFBKbexs1PrCxRyCev7AgMBAAGjggJuMIICajAdBgNVHQ4EFgQUwJfRwHI0ZD18xEq3Zp5yPLX8LeowHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAsGA1UdDwQEAwIF4DA9BgNVHREENjA0oBkGBWBMAQMDoBAEDjk5MTcxMTcxMTcxMTE1oBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMDAfBgNVHSMEGDAWgBS9s7h9hfwrP7owfx0m4beAEeY/eDCBrAYDVR0fBIGkMIGhMIGeoIGboIGYhklodHRwOi8vc3BvcGNzZjE4Mjg3My5pbnRyYS5mYXplbmRhLnNwLmdvdi5ici9DZXJ0RW5yb2xsL3Nwb3Bjc2YxODI4NzMuY3JshktmaWxlOi8vXFxTUE9QQ1NGMTgyODczLmludHJhLmZhemVuZGEuc3AuZ292LmJyXENlcnRFbnJvbGxcc3BvcGNzZjE4Mjg3My5jcmwwggEMBggrBgEFBQcBAQSB/zCB/DB7BggrBgEFBQcwAoZvaHR0cDovL3Nwb3Bjc2YxODI4NzMuaW50cmEuZmF6ZW5kYS5zcC5nb3YuYnIvQ2VydEVucm9sbC9TUE9QQ1NGMTgyODczLmludHJhLmZhemVuZGEuc3AuZ292LmJyX3Nwb3Bjc2YxODI4NzMuY3J0MH0GCCsGAQUFBzAChnFmaWxlOi8vXFxTUE9QQ1NGMTgyODczLmludHJhLmZhemVuZGEuc3AuZ292LmJyXENlcnRFbnJvbGxcU1BPUENTRjE4Mjg3My5pbnRyYS5mYXplbmRhLnNwLmdvdi5icl9zcG9wY3NmMTgyODczLmNydDANBgkqhkiG9w0BAQUFAAOCAQEAhbemo/QCyIiSfE3ekGMwD5c4awf4vL0GTEDCjZBcWTAeM4rXKU8bpXUITWF8/upYBYVqaxrHm6wWTyQv6HwGhI7oHauTrdcp3ICnTT9RGfWWvndi10tRkOe/P3aJ2uROmR4BJu3VS+TImf7+GHvfnZLpM8HO7xuadJ4EKCNQtHXOFsqEu6D6WnKJOiprd5HW4RlPCKomOlXqjVk7Bq7Xy5rrNzqWqEAluDLK1hqPEWiXU56z+lm8nOWZ6yS4ldzqbEbT3+nZd0bVvcXmQp4awVL/LtlcZwS6PPYswelFAxm6A1EIqvAtnd8thRlIyQYy8uC0x4lW+Y7uZ21QBj8mnA==</X509Certificate></X509Data></KeyInfo></Signature></resLote>]]>
+            </CfeConsultarLotesResult>
+        </CfeConsultarLotesResponse>
+    </soap:Body>
+</soap:Envelope>
