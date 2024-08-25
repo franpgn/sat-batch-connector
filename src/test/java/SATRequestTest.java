@@ -1,6 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sat.sat.SATRequest;
-import com.sat.sat.SOAPBuilder;
+import com.connector.sat.service.SATRequest;
+import com.connector.sat.service.SOAPBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import java.io.*;

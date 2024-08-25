@@ -1,5 +1,4 @@
-import com.sat.sat.SATResponse;
-import jakarta.xml.bind.JAXBException;
+import com.connector.sat.service.SATResponse;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
@@ -8,9 +7,9 @@ import java.util.Objects;
 public class SATResponseTest {
 
     @Test
-    public void readSATResponseSuccess() throws IOException, JAXBException {
+    public void readSATResponseSuccess() throws IOException{
         File file = new File(
-                Objects.requireNonNull(this.getClass().getClassLoader().getResource("response/xml_response.xml")).getFile()
+                Objects.requireNonNull(this.getClass().getClassLoader().getResource("response/xml_sat_invalido.xml")).getFile()
         );
         Reader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -25,6 +24,11 @@ public class SATResponseTest {
         bufferedReader.close();
         fileReader.close();
 
-        System.out.println(SATResponse.extractCDATA(response));
+        try {
+            //arrumar e fazer bateria de testes!!!
+            System.out.println(SATResponse.unmarshal(response).getCfeConsultarLotesResult().getResLote().getMensagem());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
