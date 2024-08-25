@@ -1,4 +1,4 @@
-package com.sat.sat;
+package com.connector.sat.service;
 
 public class SATRequest {
     private String uf;
