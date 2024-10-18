@@ -1,11 +1,17 @@
 package com.connector.sat.model;
 
 import jakarta.xml.bind.annotation.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "signatureValue"
 })
+@NoArgsConstructor
+@Getter
+@Setter
 public class Signature {
     @XmlTransient
     private String signedInfo;
@@ -13,31 +19,4 @@ public class Signature {
     private String signatureValue;
     @XmlTransient
     private String keyInfo;
-
-    public Signature() {
-    }
-
-    public String getSignedInfo() {
-        return signedInfo;
-    }
-
-    public void setSignedInfo(String signedInfo) {
-        this.signedInfo = signedInfo;
-    }
-
-    public String getSignatureValue() {
-        return signatureValue;
-    }
-
-    public void setSignatureValue(String signatureValue) {
-        this.signatureValue = signatureValue;
-    }
-
-    public String getKeyInfo() {
-        return keyInfo;
-    }
-
-    public void setKeyInfo(String keyInfo) {
-        this.keyInfo = keyInfo;
-    }
 }

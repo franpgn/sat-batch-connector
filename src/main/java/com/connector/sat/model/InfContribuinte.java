@@ -1,29 +1,24 @@
 package com.connector.sat.model;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+        "cnpj",
+        "nome"
+})
+@NoArgsConstructor
+@Getter
+@Setter
 public class InfContribuinte {
-    private String cnpj;
-    private String nome;
-
-    public InfContribuinte() {
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
     @XmlElement(name = "CNPJ")
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
+    private String cnpj;
     @XmlElement(name = "xNome")
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    private String nome;
 }

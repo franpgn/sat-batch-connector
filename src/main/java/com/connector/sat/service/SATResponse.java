@@ -1,7 +1,9 @@
 package com.connector.sat.service;
 
 import com.connector.sat.model.*;
+import jakarta.persistence.*;
 import jakarta.xml.bind.JAXBContext;
+import lombok.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -16,8 +18,38 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
 
+@Entity(name = "sat_response")
+@Table(name = "sat_response")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(of = "id")
 public class SATResponse {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    @Column(name = "nSat")
+    private String nSat;
+    private Date envio;
+    private Date recebimento;
+    private Integer cupons;
+    private String situacaoLote;
+    @OneToMany(mappedBy = "satResponse", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Cupom> cupomList;
+
+    public SATResponse(String nSat, Date envio, Date recebimento, Integer cupons, String situacaoLote, List<Cupom> cuponsList) {
+        this.nSat = nSat;
+        this.envio = envio;
+        this.recebimento = recebimento;
+        this.cupons = cupons;
+        this.situacaoLote = situacaoLote;
+        this.cupomList = cuponsList;
+    }
 
     public static CfeConsultarLotesResponse unmarshal(String xml) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

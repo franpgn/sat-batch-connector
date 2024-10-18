@@ -7,6 +7,9 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Date;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Lote", propOrder = {
@@ -19,6 +22,9 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
         "situacaoLote",
         "infCfe"
 })
+@NoArgsConstructor
+@Getter
+@Setter
 public class Lote {
     @XmlElement(name = "NRec")
     private String nRec;
@@ -38,71 +44,4 @@ public class Lote {
     private String situacaoLote;
     @XmlElement(name = "InfCfe")
     private InfCfe infCfe;
-
-    public Lote() {
-    }
-
-    public String getnRec() {
-        return nRec;
-    }
-
-    public void setnRec(String nRec) {
-        this.nRec = nRec;
-    }
-
-    public Date getDhEnvioLote() {
-        return dhEnvioLote;
-    }
-
-    public void setDhEnvioLote(Date dhEnvioLote) {
-        this.dhEnvioLote = dhEnvioLote;
-    }
-
-    public Date getDhProcessamento() {
-        return dhProcessamento;
-    }
-
-    public void setDhProcessamento(Date dhProcessamento) {
-        this.dhProcessamento = dhProcessamento;
-    }
-
-    public String getTipoLote() {
-        return tipoLote;
-    }
-
-    public void setTipoLote(String tipoLote) {
-        this.tipoLote = tipoLote;
-    }
-
-    public String getOrigem() {
-        return origem;
-    }
-
-    public void setOrigem(String origem) {
-        this.origem = origem;
-    }
-
-    public String getQtdeCupoms() {
-        return qtdeCupoms;
-    }
-
-    public void setQtdeCupoms(String qtdeCupoms) {
-        this.qtdeCupoms = qtdeCupoms;
-    }
-
-    public String getSituacaoLote() {
-        return situacaoLote;
-    }
-
-    public void setSituacaoLote(String situacaoLote) {
-        this.situacaoLote = situacaoLote;
-    }
-
-    public InfCfe getInfCfe() {
-        return infCfe;
-    }
-
-    public void setInfCfe(InfCfe infCfe) {
-        this.infCfe = infCfe;
-    }
 }
