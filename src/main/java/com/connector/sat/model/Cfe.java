@@ -5,6 +5,10 @@ import jakarta.xml.bind.annotation.XmlTransient;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Cfe", propOrder = {
@@ -12,6 +16,9 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
         "nCupom",
         "situacao"
 })
+@NoArgsConstructor
+@Getter
+@Setter
 public class Cfe {
     @XmlElement(name = "Chave")
     private String chave;
@@ -21,39 +28,4 @@ public class Cfe {
     private String situacao;
     @XmlTransient
     private String cfeErros;
-
-    public Cfe() {
-    }
-
-    public String getChave() {
-        return chave;
-    }
-
-    public void setChave(String chave) {
-        this.chave = chave;
-    }
-
-    public String getnCupom() {
-        return nCupom;
-    }
-
-    public void setnCupom(String nCupom) {
-        this.nCupom = nCupom;
-    }
-
-    public String getSituacao() {
-        return situacao;
-    }
-
-    public void setSituacao(String situacao) {
-        this.situacao = situacao;
-    }
-
-    public String getCfeErros() {
-        return cfeErros;
-    }
-
-    public void setCfeErros(String cfeErros) {
-        this.cfeErros = cfeErros;
-    }
 }

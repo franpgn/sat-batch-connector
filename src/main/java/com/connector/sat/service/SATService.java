@@ -11,9 +11,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-@Path("/connector")
-@ApplicationPath("/sat")
-public class SATConnectorService extends Application {
+@Path("/sat")
+@ApplicationPath("/connector")
+public class SATService extends Application {
     @GET
     @Path("/test-connectivity")
     @Produces("text/plain")

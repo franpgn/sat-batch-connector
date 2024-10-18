@@ -1,6 +1,9 @@
 package com.connector.sat.model;
 
 import jakarta.xml.bind.annotation.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "resLote", propOrder = {
@@ -9,6 +12,9 @@ import jakarta.xml.bind.annotation.*;
         "lote",
         "signature"
 })
+@NoArgsConstructor
+@Getter
+@Setter
 public class ResLote {
     @XmlElement(name = "infContribuinte")
     private InfContribuinte infContribuinte;
@@ -18,39 +24,4 @@ public class ResLote {
     private Lote lote;
     @XmlElement(name = "Signature")
     private Signature signature;
-
-    public ResLote() {
-    }
-
-    public InfContribuinte getInfContribuinte() {
-        return infContribuinte;
-    }
-
-    public void setInfContribuinte(InfContribuinte infContribuinte) {
-        this.infContribuinte = infContribuinte;
-    }
-
-    public String getMensagem() {
-        return mensagem;
-    }
-
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
-    }
-
-    public Lote getLote() {
-        return lote;
-    }
-
-    public void setLote(Lote lote) {
-        this.lote = lote;
-    }
-
-    public Signature getSignature() {
-        return signature;
-    }
-
-    public void setSignature(Signature signature) {
-        this.signature = signature;
-    }
 }
