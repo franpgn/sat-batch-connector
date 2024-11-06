@@ -15,7 +15,7 @@ import java.util.Objects;
 public class SATResponseTest {
 
     @Test
-    public void readSATResponseSuccess() throws IOException{
+    public void readSATResponseSuccess() throws Exception {
         File file = new File(
                 Objects.requireNonNull(this.getClass().getClassLoader().getResource("response/xml_response.xml")).getFile()
         );
@@ -31,31 +31,7 @@ public class SATResponseTest {
 
         bufferedReader.close();
         fileReader.close();
-
-        try {
-            //arrumar e fazer bateria de testes!!!
-            ResLote resLote = SATResponse.unmarshal(response).getCfeConsultarLotesResult().getResLote();
-            System.out.println(resLote.getMensagem());
-            List<Cupom> cupomList = new ArrayList<>();
-            cupomList.add(new Cupom(
-                    resLote.getLote().getNRec(),
-                    resLote.getLote().getInfCfe().getCfe().getChave(),
-                    Integer.getInteger(resLote.getLote().getInfCfe().getCfe().getNCupom()),
-                    resLote.getLote().getInfCfe().getCfe().getSituacao()
-            ));
-            SATResponse satResponse = new SATResponse(
-                    resLote.getLote().getNRec(),
-                    resLote.getLote().getDhProcessamento(),
-                    resLote.getLote().getDhEnvioLote(),
-                    Integer.getInteger(resLote.getLote().getQtdeCupoms()),
-                    resLote.getLote().getSituacaoLote(),
-                    cupomList
-            );
-
-            SATResponseDAO satResponseDAO = new SATResponseDAO();
-            satResponseDAO.save(satResponse);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        ResLote resLote = SATResponse.unmarshal(response).getCfeConsultarLotesResult().getResLote();
+        System.out.println(resLote.getMensagem());
     }
 }
