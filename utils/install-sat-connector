@@ -1,0 +1,31 @@
+Baixar a versão zip 17 do Java, Amazon Coretto
+https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html
+
+Abrir o prompt de comando na pasta e executar o seguinte comando:
+keytool -importcert -alias startssl -keystore ENDERECO_JAVA_17/lib/security/cacerts -storepass changeit -file utils/sat.der
+
+Baixar a versão 10 do Tomcat
+https://tomcat.apache.org/download-10.cgi
+
+Criar o arquivo setenv.bat no diretório bin do Tomcat com o seguinte conteúdo:
+set JAVA_HOME=C:\Amazon Corretto\jdk-17 (algo assim, colocar o caminho correto)
+
+Dentro do arquivo tomcat-users.xml, adicionar o seguinte trecho:
+<tomcat-users xmlns="http://tomcat.apache.org/xml"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+              version="1.0">
+    <role rolename="manager-gui"/>
+    <role rolename="admin-gui"/>
+    <user username="admin" password="admin" roles="manager-gui,admin-gui"/>
+</tomcat-users>
+
+Copiar o arquivo sat.war e colocar no diretório webapps do Tomcat
+O arquivo sat.war está no diretório sat-batch-connector/out/artifacts/sat
+
+Iniciar o Tomcat
+
+Acessar o endereço http://localhost:8080/sat/query e enviar a query para o SAT
+
+# Configuração do SAT
+Dentro do arquivo application.properties, é possível alterar se o serviço terá persistência ou não
